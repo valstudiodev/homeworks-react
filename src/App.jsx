@@ -65,7 +65,7 @@ export default function App() {
       </main>
 
       <footer className="app-footer mt-5 mb-5">
-        <p>Created while studying React • 2026</p>
+        <p>Created while studying React by Valentyn Tkachenko • 2026</p>
       </footer>
     </div>
   );

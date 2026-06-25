@@ -1,3 +1,21 @@
-.main-menu__title {
-  
+.main-menu__span {
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 0;
+    background-color: grey;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+    transition: width 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
 }
