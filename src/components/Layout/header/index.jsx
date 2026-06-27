@@ -16,7 +16,7 @@ export default function Header({ activePage, setActivePage }) {
           cursor-pointer self-center"
           onClick={() => setActivePage('menu')}
         >
-          ⬅️ Назад до списку
+          ⬅️ Back to list
         </button>
       )}
     </header>

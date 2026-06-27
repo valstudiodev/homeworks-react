@@ -1,1 +1,1 @@
-import { Homework1 } from "./Homework1";
+import { Homework1 } from ".";

@@ -1,18 +1,16 @@
-import './Homework1'
-import { CardProduct } from "../../components/CardProduct";
+import { CardProduct } from "@/components/CardProduct";
+import { TitleHomework } from "@/components/fonts/Fonts";
+import { GREEN_APPLE_PRODUCT } from "@/constants/products/products";
 
-function Homework1() {
+export default function Homework1() {
   return (
-    <div className="homework-box">
-      <h3>📚 Домашнє завдання №1: Профіль Користувача</h3>
-      <p>Нижче відрендерено мій виконаний компонент:</p>
+    <div className="homework-container">
+      <TitleHomework number={1} />
 
       <div className="homework-preview-area">
-        {/* 2. ВИКЛИКАЄМО ТВІЙ КОМПОНЕНТ ЯК ТЕГ! */}
-        <CardProduct />
+        <CardProduct data={GREEN_APPLE_PRODUCT} />
       </div>
-    </div>
+    </div >
   );
 }
 
-export default Homework1
