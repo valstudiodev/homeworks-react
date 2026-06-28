@@ -1,6 +1,12 @@
-import React from "react";
+import { Dispatch, SetStateAction, ReactNode } from "react";
 
-export default function Home({ activePage, setActivePage, renderContent }) {
+interface HomeProps {
+  activePage: string;
+  setActivePage: Dispatch<SetStateAction<string>>;
+  renderContent: ReactNode; // ReactNode охоплює компоненти, рядки, числа або null
+}
+
+export default function Home({ activePage, setActivePage, renderContent }: HomeProps) {
   return (
     <main className="app-main grow max-w-full container  mx-auto px-4 flex flex-col items-center">
 
@@ -26,7 +32,6 @@ export default function Home({ activePage, setActivePage, renderContent }) {
         </div>
       )}
 
-      {/* ЯКЩО обрано якесь ДЗ — тут відрендериться результат, який ми передали */}
       {renderContent}
 
     </main>

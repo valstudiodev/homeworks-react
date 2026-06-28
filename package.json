@@ -6,7 +6,7 @@
   "homepage": "https://valstudiodev.github.io/https://github.com/valstudiodev/homeworks-react.git/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -20,11 +20,13 @@
     "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
+    "@types/node": "^26.0.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "gh-pages": "^6.3.0",
     "oxlint": "^1.69.0",
+    "typescript": "^6.0.3",
     "vite": "^8.1.0"
   }
 }

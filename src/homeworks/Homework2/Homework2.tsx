@@ -1,9 +1,10 @@
 import { TitleHomework } from "@/components/fonts/Fonts";
 
-export default function Homework3() {
+export default function Homework2() {
+
   return (
     <div className="homework-container">
-      <TitleHomework number={3} />
+      <TitleHomework number={2} />
 
       <div className="homework-preview-area">
 
