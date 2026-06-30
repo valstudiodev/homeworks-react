@@ -1,5 +1,5 @@
 import { TitleHomework } from "@/components/fonts/Fonts";
-import { Greeting, Person, person, hobbiesList, RenderList, UserStatus, CardProductLaptop, Counter, CounterProf, SimpleInput } from "@/components/Test/Test";
+// import { Greeting, Person, person, hobbiesList, RenderList, UserStatus, CardProductLaptop, Counter, CounterProf, SimpleInput } from "@/components/Test/Test";
 // import { product, GREEN_APPLE_PRODUCT } from "@/constants/products/Test";
 // import { CardProduct } from "@/components/Test";
 
@@ -17,7 +17,7 @@ export default function Homework3() {
         <CardProduct data={GREEN_APPLE_PRODUCT} /> */}
         {/* <Counter /> */}
         {/* <CounterProf /> */}
-        <SimpleInput />
+        {/* <SimpleInput /> */}
       </div>
     </div>
   );

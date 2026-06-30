@@ -1,7 +1,7 @@
 import { TitleHomework, SubtitleHomework } from "@/components/fonts/Fonts";
 import { useState } from "react";
 import React from 'react';
-import { Value } from "sass";
+// import { Value } from "sass";
 
 export default function Homework1(): React.JSX.Element {
 
