@@ -109,50 +109,50 @@ export function RenderList({ hobbies }: HobbiesProps) {
 
 
 // ====== task 3
-const skills: string[] = ['HTML', 'SCSS', 'JavaScript']
+// const skills: string[] = ['HTML', 'SCSS', 'JavaScript']
 
-interface SkillsProps {
-  skills: string[];
-}
-function GetSkillsList({ skills }: SkillsProps) {
-  return (
-    <ul>
-      {
-        skills.map((skill, index) => (
-          <li key={index}>{skill}</li>
-        ))
-      }
-    </ul>
-  )
-}
+// interface SkillsProps {
+//   skills: string[];
+// }
+// function GetSkillsList({ skills }: SkillsProps) {
+//   return (
+//     <ul>
+//       {
+//         skills.map((skill, index) => (
+//           <li key={index}>{skill}</li>
+//         ))
+//       }
+//     </ul>
+//   )
+// }
 
 // ========== Task 4
-interface UserProps {
-  name: string;
-  job: string;
-}
-function GetUserInfo({ name, job }: UserProps) {
-  return (
-    <h1>My name is {name}. I am a {job}</h1>
-  )
-}
+// interface UserProps {
+//   name: string;
+//   job: string;
+// }
+// function GetUserInfo({ name, job }: UserProps) {
+//   return (
+//     <h1>My name is {name}. I am a {job}</h1>
+//   )
+// }
 
 // ======= Task 5
-interface IsAdminProps {
-  isAdmin: boolean
-}
-const isAdmin = true
-function IsAdmin({ isAdmin }: IsAdminProps) {
-  return (
-    <div>
-      {
-        isAdmin ? (<p>Welcome Admin</p>)
-          :
-          (<p>Not admin</p>)
-      }
-    </div>
-  )
-}
+// interface IsAdminProps {
+//   isAdmin: boolean
+// }
+// const isAdmin = true
+// function IsAdmin({ isAdmin }: IsAdminProps) {
+//   return (
+//     <div>
+//       {
+//         isAdmin ? (<p>Welcome Admin</p>)
+//           :
+//           (<p>Not admin</p>)
+//       }
+//     </div>
+//   )
+// }
 
 
 // ================================================================
