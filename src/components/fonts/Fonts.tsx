@@ -4,7 +4,7 @@ interface TitleHomeworkProps {
 
 export function TitleHomework({ number }: TitleHomeworkProps) {
   return (
-    <h2 className="title-homework text-3xl  font-bold my-4">📚 Homework №{number}</h2>
+    <h2 className="title-homework text-3xl font-bold text-[clamp(1.7rem,2.5vw,2.5rem)]">📚 Homework №{number}</h2>
   )
 }
 

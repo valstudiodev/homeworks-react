@@ -1,25 +1,34 @@
 import { TitleHomework, SubtitleHomework } from "@/components/fonts/Fonts";
 import { useState } from "react";
 import React from 'react';
+import { Value } from "sass";
 
 export default function Homework1(): React.JSX.Element {
 
   return (
-    <div className="homework-container">
+    <div className="homework-container flex flex-col items-center gap-10">
       <TitleHomework number={1} />
 
-      <div className="homework-preview-area">
+      <div className="homework-preview-area flex flex-col items-center gap-10">
         {/* task 1 */}
         <Homework1Task1 />
 
         {/* task 2 */}
 
         {/* task 3 */}
-        <Homework1Task2 />
+        <Homework1Task3 />
+
+        {/* task 5 */}
+        <Homework1Task5 users={users} />
+
+
       </div>
     </div>
   );
 }
+
+
+// ==========================================
 
 
 // ==========================================================================================================
@@ -105,13 +114,21 @@ function RenderListResourses({ resources }: ListResoursesProps) {
 }
 
 
+// ==========================================================================================================
+// Задача 2. Вводиться номер місяця. Автоматично виводити рекомендований одяг (зима – пальто, літо – шорти ….). 
+// Також автоматично виводити зображення з відповідним зображенням лісу (зима – ліс зі снігом, осінь – жовтий ліс, …).
+// ==========================================================================================================
+
+
+
+
 
 
 // ==========================================================================================================
 // Задача 3. Задано початок та кінець діапазону. 
 // При натисканні на кнопку випадковим чином генерувати значення з вказаного діапазону та відображати його.
 // ==========================================================================================================
-function Homework1Task2(): React.JSX.Element {
+function Homework1Task3(): React.JSX.Element {
   const [min, setMin] = useState<number | ''>('')
   const [max, setMax] = useState<number | ''>('')
   const [result, setResult] = useState<number | null>(null)
@@ -136,7 +153,7 @@ function Homework1Task2(): React.JSX.Element {
 
   return (
     <div className="p-4 border border-gray-700 rounded-lg bg-zinc-900/50 mb-6">
-      <SubtitleHomework number={2} />
+      <SubtitleHomework number={3} />
       <WrapInput label="Min:" value={min} onChange={setMin} placeholder="Enter first number" />
       <WrapInput label="Max" value={max} onChange={setMax} placeholder="Enter second number" />
       <GenerateButton label="Generate" onClick={handleGenerateClick} />
@@ -212,3 +229,180 @@ function Error({ value }: ErrorProps): React.JSX.Element {
     <p className="bg-red-700 p-4 rounded-2xl">{value}</p>
   )
 }
+
+
+
+// ==========================================================================================================
+// Задача 5. Додаток містить масив об’єктів (логін, пароль) --  існуючі логіни і паролі.
+// Користувач вводить логін і пароль, а програма при натисненні на кнопку повідомляє чи може користувач бути авторизованим.
+// ==========================================================================================================
+type User = {
+  login: string
+  password: string
+}
+const users: User[] = [
+  {
+    login: "admin",
+    password: "1234",
+  },
+  {
+    login: "val",
+    password: "qwerty",
+  },
+  {
+    login: "guest",
+    password: "guest123",
+  },
+]
+
+function Homework1Task5({ users }: { users: User[] }): React.JSX.Element {
+  // const { userList } = users
+  const [login, setLogin] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [isAuthorized, setIsAuthorized] = useState<boolean>(false)
+  const [error, setError] = useState<string>('')
+
+  const handleValidateClick = () => {
+    if (login === '' || password === '') {
+      setError('Please fill out both fields!')
+      console.log('Please fill out both fields!');
+      return
+    }
+    if (login.length <= 3 || password.length <= 3) {
+      setError('Not enought symbols!')
+      console.log('Not enought symbols!');
+      return
+    }
+    if (!login.trim() || !password.trim()) {
+      setError('Fields is empty')
+      console.log('Fields is empty');
+      return
+    }
+
+    const foundUser = users.find((user) => user.login === login && user.password === password)
+    if (foundUser) {
+      setIsAuthorized(true)
+      setError('')
+    } else {
+      setIsAuthorized(false)
+      setError('User is not found!')
+    }
+
+  }
+
+  return (
+    <div className="p-4 border border-gray-700 rounded bg-zinc-900/50 mb-6">
+      <SubtitleHomework number={5} />
+      <GenerateInputLogin label="Login:" value={login} onChange={setLogin} placeholder="Enter the Login..." />
+      <GenerateInputPassword label="Password:" value={password} onChange={setPassword} placeholder="Enter the password..." />
+      <GenerateButtonValidate label="Start" onClick={handleValidateClick} />
+
+      {isAuthorized !== false && <SuccessMessage />}
+      {error && <ErrorValidate value={error} />}
+    </div>
+  )
+}
+
+// ============ LOGIN ===========
+interface PropsInputLogin {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+}
+function GenerateInputLogin({ label, value, onChange, placeholder = '0' }: PropsInputLogin): React.JSX.Element {
+  const inputId = React.useId();
+
+  return (
+    <div className="mb-4 flex items-center">
+      <label htmlFor={inputId} className="mr-4 text-zinc-300 min-w-10">
+        {label}
+      </label>
+      <input
+        type="email"
+        id={inputId}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="bg-zinc-800 rounded pl-2 
+        text-white outline-none focus:ring-1 
+        focus:ring-blue-500 p-2"
+      />
+    </div>
+  )
+}
+// ============ PASSWORD ===========
+interface PropsInputPassword {
+  label: string;
+  value: number | string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+}
+function GenerateInputPassword({ label, value, onChange, placeholder = '0' }: PropsInputPassword): React.JSX.Element {
+  const inputId = React.useId()
+
+  return (
+    <div>
+      <label htmlFor={inputId} className="mr-4 text-zinc-300 min-w-10">
+        {label}
+      </label>
+      <input
+        type="password"
+        id={inputId}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="bg-zinc-800 rounded pl-2 
+        text-white outline-none focus:ring-1 
+        focus:ring-blue-500 p-2"
+      />
+    </div>
+  )
+}
+// ============ BUTTON VALIDATE ===========
+interface PropsBtnValidate {
+  label: string;
+  onClick: () => void;
+}
+function GenerateButtonValidate({ label, onClick }: PropsBtnValidate): React.JSX.Element {
+  return (
+    <button onClick={onClick}
+      type="button"
+      className="bg-blue-800 p-2 rounded-2xl 
+      mb-2 cursor-pointer hover:bg-blue-500 
+      transition duration-300">
+      {label}
+    </button>
+  )
+}
+// ============ ValidateAuthorized ===========
+function SuccessMessage(): React.JSX.Element {
+  return (
+    <p className="bg-green-600 text-white p-2 rounded text-center">
+      Authorization successful
+    </p>
+  )
+}
+// ============ ERROR ===========
+type PropsErrorValidate = {
+  value: string;
+}
+function ErrorValidate({ value }: PropsErrorValidate): React.JSX.Element {
+  return (
+    <p className="bg-red-700 p-4 rounded-2xl text-center">{value}</p>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

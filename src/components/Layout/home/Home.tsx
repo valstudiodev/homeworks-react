@@ -8,12 +8,12 @@ interface HomeProps {
 
 export default function Home({ activePage, setActivePage, renderContent }: HomeProps) {
   return (
-    <main className="app-main grow max-w-full container  mx-auto px-4 flex flex-col items-center">
+    <main className="app-main grow container">
 
       {/* ЯКЩО стан рівний 'menu' — ПОКАЗУЄМО ГОЛОВНЕ МЕНЮ */}
       {activePage === 'menu' && (
         <div className="main-menu flex flex-col items-center gap-5">
-          <h2 className="main-menu__title text-3xl font-bold text-center">Catalog of my homework with React</h2>
+          <h2 className="main-menu__title text-3xl font-bold text-center text-[clamp(1rem,2.5vw,2rem)]">Catalog of my homework with React</h2>
           <p className="main-menu__text text-1xl text-grey text-center">
             Select a task from the list below to check its performance:
           </p>
