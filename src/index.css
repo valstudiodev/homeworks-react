@@ -6,6 +6,11 @@
   --color-grey: grey;
   --color-lightgrey: lightgrey;
   --color-bg-dark-light: #524e4e;
+
+  /* ======= card colors */
+  --color-bg-card:#1A2236;
+  --color-border-default:1px solid #334155;
+  --color-box-shadow-card:0 10px 30px rgba(0,0,0,.35);
 }
 
 @utility flex-center {
@@ -16,3 +21,6 @@
   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 
+@utility flex-width-50% {
+  @apply flex items-center justify-between gap-2 width-50%; /* -1/2 */
+}

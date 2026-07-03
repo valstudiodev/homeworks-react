@@ -1,6 +1,12 @@
 interface TitleHomeworkProps {
   number: number | string;
 }
+interface Subtitle {
+  title: string;
+}
+interface SubtitleTask {
+  number: number;
+}
 
 export function TitleHomework({ number }: TitleHomeworkProps) {
   return (
@@ -8,13 +14,16 @@ export function TitleHomework({ number }: TitleHomeworkProps) {
   )
 }
 
-interface SubtitleHomeworkTask {
-  number: number | string;
-}
-export function SubtitleHomework({ number }: SubtitleHomeworkTask) {
+export function Subtitle({ title }: Subtitle) {
   return (
-    <h3 className="text-xl font-semibold text-gray-400 mb-3">
-      Task {number}.
+    <h3 className="text-2xl mb-4 text-center font-semibold text-zinc-100">
+      {title}
     </h3>
+  )
+}
+
+export function SubtitleTask({ number }: SubtitleTask) {
+  return (
+    <h2 className="text-white text-3xl">Task №{number}</h2>
   )
 }

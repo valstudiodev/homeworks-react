@@ -1,5 +1,5 @@
 // @import '../components/Test/test.scss';
-
+@import './settings/settings';
 
 
 .main-menu__span {
@@ -24,8 +24,3 @@
   }
 }
 
-// [class*="__container"] {
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   padding: 0 15px;
-// }
