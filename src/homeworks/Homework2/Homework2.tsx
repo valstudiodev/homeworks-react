@@ -1,5 +1,5 @@
 import { TitleHomework } from "@/components/fonts/Fonts";
-import { CardProduct, Text } from "../../components/Test/Test";
+import { CardProduct } from "../../components/Test/Test";
 import { GREEN_APPLE_PRODUCT } from "../../constants/products/Test";
 // import styles from "./homework2.module.css";
 import './Homework2.scss';
