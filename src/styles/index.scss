@@ -2,25 +2,25 @@
 // @import './settings/settings';
 
 
-.main-menu__span {
-  position: relative;
+// .main-menu__span {
+//   position: relative;
 
-  &::after {
-    content: "";
-    width: 0;
-    background-color: grey;
-    height: 1px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    translate: -50% 0;
-    transition: width 0.3s;
-  }
+//   &::after {
+//     content: "";
+//     width: 0;
+//     background-color: grey;
+//     height: 1px;
+//     position: absolute;
+//     bottom: 0;
+//     left: 50%;
+//     translate: -50% 0;
+//     transition: width 0.3s;
+//   }
 
-  &:hover {
-    &::after {
-      width: 100%;
-    }
-  }
-}
+//   &:hover {
+//     &::after {
+//       width: 100%;
+//     }
+//   }
+// }
 

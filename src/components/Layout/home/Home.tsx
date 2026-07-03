@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, ReactNode } from "react";
+import { IconFolder } from "@/assets/icons/Icons";
 
 interface HomeProps {
   activePage: string;
@@ -19,14 +20,14 @@ export default function Home({ activePage, setActivePage, renderContent }: HomeP
           </p>
 
           <ul className="main-menu__list flex flex-col gap-3 text-xl">
-            <li className="main-menu__item cursor-pointer hover:text-white transition" onClick={() => setActivePage('hw1')}>
-              📂 <span className="main-menu__span hover:text-grey transition duration-300">Homework 1</span>
+            <li className="main-menu__item cursor-pointer hover:text-white transition flex items-center gap-2" onClick={() => setActivePage('hw1')}>
+              <IconFolder /> <span className="main-menu__span hover:text-grey transition duration-300">Homework 1</span>
             </li>
-            <li className="main-menu__item cursor-pointer hover:text-white transition" onClick={() => setActivePage('hw2')}>
-              📂 <span className="main-menu__span hover:text-grey transition duration-300">Homework 2</span>
+            <li className="main-menu__item cursor-pointer hover:text-white transition flex items-center gap-2" onClick={() => setActivePage('hw2')}>
+              <IconFolder /> <span className="main-menu__span hover:text-grey transition duration-300">Homework 2</span>
             </li>
-            <li className="main-menu__item cursor-pointer hover:text-white transition" onClick={() => setActivePage('hw3')}>
-              📂 <span className="main-menu__span hover:text-grey transition duration-300">Homework 3</span>
+            <li className="main-menu__item cursor-pointer hover:text-white transition flex items-center gap-2" onClick={() => setActivePage('hw3')}>
+              <IconFolder /> <span className="main-menu__span hover:text-grey transition duration-300">Homework 3</span>
             </li>
           </ul>
         </div>
